@@ -8,14 +8,14 @@ import {options} from './options';
 
 // following codes need to move to a util class
 
-const getPackageDefinition = (protoFileName: string, protoRootPath = 'grpc/proto') => {
+const getPackageDefinition = (protoFileName: string, protoRootPath = 'proto') => {
   return protoLoader.loadSync(
     path.resolve(__dirname, protoRootPath, protoFileName),
     options,
   );
 };
 
-const userPackageDef = getPackageDefinition('user/services.proto');
+const userPackageDef = getPackageDefinition('user/service.proto');
 
 const userProto = grpc.loadPackageDefinition(
   userPackageDef,
