@@ -14,7 +14,7 @@
       "plugin:@shopify/typescript",
       "plugin:@shopify/typescript-type-checking"
     ],
-    "ignorePatterns": ["./src/grpc/_compiled_proto/**/*.ts"],
+    "ignorePatterns": ["**/src/grpc/_compiled_proto/**/*.ts"],
     "parserOptions": {
       "project": "tsconfig.json"
     },
