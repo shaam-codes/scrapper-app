@@ -2,7 +2,7 @@
  * This is application level Data Transfer Object class
  */
 
-import Uuid from "../../../domain/uuid";
+import Uuid from '../../../domain/uuid';
 
 class CreateUserResponseDto {
   id: Uuid;

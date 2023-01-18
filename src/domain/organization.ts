@@ -4,7 +4,7 @@
  * only way to create instance, use static methods with DTO args
  */
 
-import Uuid from "./uuid";
+import Uuid from './uuid';
 
 class Organization {
   public static fromCreateDto() {

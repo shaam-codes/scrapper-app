@@ -4,7 +4,7 @@
  * Use static functions for accepting the DTO and get domain instance
  */
 
-import Uuid from "./uuid";
+import Uuid from './uuid';
 
 
 class User {

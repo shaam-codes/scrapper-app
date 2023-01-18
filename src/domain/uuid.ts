@@ -3,31 +3,30 @@
  * For the time being uuid npm package as the base, for more details https://www.npmjs.com/package/uuid
  */
 
-import { v4 as uuidv4, validate } from 'uuid';
+import {v4 as uuidv4, validate as validateUuid} from 'uuid';
 
 class Uuid {
-    private id: string;
+  public static generate(): Uuid {
+    return new this(uuidv4());
+  }
 
-    private constructor(id: string) {
-        this.id = id;
+  public static validate(id: string) {
+    if (validateUuid(id)) {
+      return new this(id);
     }
 
-    public static generate(): Uuid {
-        return new this(uuidv4());
-    }
+    throw new Error(`${id} is not a valid UUID`);
+  }
 
-    public static validate(id: string) {
-        if (validate(id)) {
-            return new this(id);
-        }
+  private readonly id: string;
 
-        throw new Error(`${id} is not a valid UUID`);
-        
-    }
+  private constructor(id: string) {
+    this.id = id;
+  }
 
-    public value(): string {
-        return this.id.valueOf();
-    }
+  public value(): string {
+    return this.id.valueOf();
+  }
 }
 
 export default Uuid;

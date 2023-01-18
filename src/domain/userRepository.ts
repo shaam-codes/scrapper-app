@@ -3,7 +3,7 @@
  * This need to be implements on the Infrastructture level
  */
 
-import User from "./user";
+import User from './user';
 
 interface UserRepository {
 

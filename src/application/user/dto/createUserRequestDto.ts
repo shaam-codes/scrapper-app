@@ -4,7 +4,7 @@
  * This class specifically using on user creation
  */
 
-import Uuid from "../../../domain/uuid";
+import Uuid from '../../../domain/uuid';
 
 class CreateUserRequestDto {
   private readonly id: Uuid;
