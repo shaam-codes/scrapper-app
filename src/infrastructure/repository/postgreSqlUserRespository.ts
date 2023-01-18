@@ -1,3 +1,5 @@
+import User from 'src/domain/user';
+
 import UserRepository from '../../domain/userRepository';
 
 class PostgreSqlUserRepository implements UserRepository {
