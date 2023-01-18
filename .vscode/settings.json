@@ -1,0 +1,8 @@
+{
+    "editor.fontLigatures": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.accessibilitySupport": "off",
+    "editor.fontFamily": "Fira Code, 'monospace', monospace",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "normal"
+}
