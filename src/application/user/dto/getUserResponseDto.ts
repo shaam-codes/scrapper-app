@@ -1,5 +1,7 @@
+import Uuid from "../../../domain/uuid";
+
 class GetUserResponseDto {
-  id: string;
+  id: Uuid;
   firstName: string;
   lastName: string;
   email: string;
@@ -11,7 +13,7 @@ class GetUserResponseDto {
   updatedAt: Date;
 
   public constructor(
-          id: string,
+          id: Uuid,
           firstName: string,
           lastName: string,
           email: string,
@@ -35,3 +37,5 @@ class GetUserResponseDto {
   }
 
 }
+
+export default GetUserResponseDto;

@@ -2,8 +2,10 @@
  * This is application level Data Transfer Object class
  */
 
+import Uuid from "../../../domain/uuid";
+
 class CreateOrganizationResponseDto {
-  id: string;
+  id: Uuid;
   name: string;
   address: string;
   region: string;
@@ -13,7 +15,7 @@ class CreateOrganizationResponseDto {
 
 
   public constructor(
-      id: string,
+      id: Uuid,
       name: string,
       address: string,
       region: string,
@@ -31,3 +33,5 @@ class CreateOrganizationResponseDto {
   }
 
 }
+
+export default CreateOrganizationResponseDto;

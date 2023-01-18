@@ -4,8 +4,10 @@
  * This class specifically using on organization creation
  */
 
+import Uuid from "../../../domain/uuid";
+
 class CreateOrganizationRequestDto {
-  private readonly id: string;
+  private readonly id: Uuid;
   private readonly name: string;
   private readonly address: string;
   private readonly region: string;
@@ -15,7 +17,7 @@ class CreateOrganizationRequestDto {
 
 
   public constructor(
-      id: string,
+      id: Uuid,
       name: string,
       address: string,
       region: string,
@@ -32,7 +34,7 @@ class CreateOrganizationRequestDto {
     this.updatedAt = updatedAt;
   }
 
-  public getId(): string {
+  public getId(): Uuid {
     return this.id;
   }
 
@@ -61,3 +63,5 @@ class CreateOrganizationRequestDto {
   }
 
 }
+
+export default CreateOrganizationRequestDto;

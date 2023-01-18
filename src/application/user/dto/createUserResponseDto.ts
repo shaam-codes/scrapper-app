@@ -2,8 +2,10 @@
  * This is application level Data Transfer Object class
  */
 
+import Uuid from "../../../domain/uuid";
+
 class CreateUserResponseDto {
-  id: string;
+  id: Uuid;
   firstName: string;
   lastName: string;
   email: string;
@@ -14,7 +16,7 @@ class CreateUserResponseDto {
   createdAt: Date;
 
   public constructor(
-        id: string,
+        id: Uuid,
         firstName: string,
         lastName: string,
         email: string,
@@ -36,3 +38,5 @@ class CreateUserResponseDto {
   }
 
 }
+
+export default CreateUserResponseDto;

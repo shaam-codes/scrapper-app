@@ -4,8 +4,10 @@
  * This class specifically using on user creation
  */
 
+import Uuid from "../../../domain/uuid";
+
 class CreateUserRequestDto {
-  private readonly id: string;
+  private readonly id: Uuid;
   private readonly firstName: string;
   private readonly lastName: string;
   private readonly email: string;
@@ -16,7 +18,7 @@ class CreateUserRequestDto {
   private readonly createdAt: Date;
 
   public constructor(
-        id: string,
+        id: Uuid,
         firstName: string,
         lastName: string,
         email: string,
@@ -37,7 +39,7 @@ class CreateUserRequestDto {
     this.createdAt = createdAt;
   }
 
-  public getId(): string {
+  public getId(): Uuid {
     return this.id;
   }
 
@@ -74,3 +76,5 @@ class CreateUserRequestDto {
   }
 
 }
+
+export default CreateUserRequestDto;

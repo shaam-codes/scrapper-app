@@ -4,13 +4,15 @@
  * Use static functions for accepting the DTO and get domain instance
  */
 
+import Uuid from "./uuid";
+
 
 class User {
   public static fromCreateDto() {
 
   }
 
-  private readonly id: string;
+  private readonly id: Uuid;
   private readonly firstName: string;
   private readonly lastName: string;
   private readonly email: string;
@@ -22,7 +24,7 @@ class User {
   private readonly updatedAt: Date;
 
   private constructor(
-        id: string,
+        id: Uuid,
         firstName: string,
         lastName: string,
         email: string,
@@ -51,4 +53,6 @@ class User {
   }
 
 }
+
+export default User;
 

@@ -3,6 +3,8 @@
  * This need to be implements on the Infrastructture level
  */
 
+import User from "./user";
+
 interface UserRepository {
 
     createUser(user: User): void;
