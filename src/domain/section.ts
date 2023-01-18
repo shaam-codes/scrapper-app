@@ -4,22 +4,22 @@
  * Use static methods for creating model and use DTO as args
  */
 
-import Uuid from "./uuid";
+import Uuid from './uuid';
 
 class Section {
-    public static fromCreateDto() {
+  public static fromCreateDto() {
 
-    }
+  }
 
-    private readonly id: Uuid;
-    private readonly name: string;
-    private readonly description: string;
-    private readonly organizationId: Uuid;
-    private readonly isActive: boolean;
-    private readonly createdAt: Date;
-    private readonly updatedeAt: Date;
+  private readonly id: Uuid;
+  private readonly name: string;
+  private readonly description: string;
+  private readonly organizationId: Uuid;
+  private readonly isActive: boolean;
+  private readonly createdAt: Date;
+  private readonly updatedeAt: Date;
 
-    private constructor(
+  private constructor(
         id: Uuid,
         name: string,
         description: string,
@@ -28,18 +28,18 @@ class Section {
         createdAt: Date,
         updatedAt: Date,
     ) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.organizationId = organizationId;
-        this.isActive = isActive;
-        this.createdAt = createdAt;
-        this.updatedeAt = updatedAt;
-    }
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.organizationId = organizationId;
+    this.isActive = isActive;
+    this.createdAt = createdAt;
+    this.updatedeAt = updatedAt;
+  }
 
-    public toCreateDto() {
+  public toCreateDto() {
 
-    }
+  }
 }
 
 export default Section;

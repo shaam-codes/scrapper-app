@@ -5,22 +5,22 @@
  */
 
 
-import Uuid from "./uuid";
+import Uuid from './uuid';
 
 class Detector {
-    public static fromCreateDto() {
+  public static fromCreateDto() {
 
-    }
+  }
 
-    private readonly id: Uuid;
-    private readonly name: string;
-    private readonly alias: string;
-    private readonly detectorPackageId: Uuid;
-    private readonly isActive: boolean;
-    private readonly createdAt: Date;
-    private readonly updatedAt: Date;
+  private readonly id: Uuid;
+  private readonly name: string;
+  private readonly alias: string;
+  private readonly detectorPackageId: Uuid;
+  private readonly isActive: boolean;
+  private readonly createdAt: Date;
+  private readonly updatedAt: Date;
 
-    private constructor(
+  private constructor(
         id: Uuid,
         name: string,
         alias: string,
@@ -29,18 +29,18 @@ class Detector {
         createdAt: Date,
         updatedAt: Date,
     ) {
-        this.id = id;
-        this.name = name;
-        this.alias = alias;
-        this.detectorPackageId = detectorPackageId;
-        this.isActive = isActive;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+    this.id = id;
+    this.name = name;
+    this.alias = alias;
+    this.detectorPackageId = detectorPackageId;
+    this.isActive = isActive;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+  }
 
-    public toCreateDto() {
+  public toCreateDto() {
 
-    }
+  }
 }
 
 export default Detector;

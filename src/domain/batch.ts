@@ -5,21 +5,21 @@
  */
 
 
-import Uuid from "./uuid";
+import Uuid from './uuid';
 
 class Batch {
-    public static fromCreateDto() {
+  public static fromCreateDto() {
 
-    }
+  }
 
-    private readonly id: Uuid;
-    private readonly name: string;
-    private readonly sectionId: Uuid;
-    private readonly isActive: boolean;
-    private readonly createdAt: Date;
-    private readonly updatedeAt: Date;
+  private readonly id: Uuid;
+  private readonly name: string;
+  private readonly sectionId: Uuid;
+  private readonly isActive: boolean;
+  private readonly createdAt: Date;
+  private readonly updatedeAt: Date;
 
-    private constructor(
+  private constructor(
         id: Uuid,
         name: string,
         sectionId: Uuid,
@@ -27,17 +27,17 @@ class Batch {
         createdAt: Date,
         updatedAt: Date,
     ) {
-        this.id = id;
-        this.name = name;
-        this.sectionId = sectionId;
-        this.isActive = isActive;
-        this.createdAt = createdAt;
-        this.updatedeAt = updatedAt;
-    }
+    this.id = id;
+    this.name = name;
+    this.sectionId = sectionId;
+    this.isActive = isActive;
+    this.createdAt = createdAt;
+    this.updatedeAt = updatedAt;
+  }
 
-    public toCreateDto() {
+  public toCreateDto() {
 
-    }
+  }
 }
 
 export default Batch;
