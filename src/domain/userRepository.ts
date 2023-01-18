@@ -1,6 +1,6 @@
 /**
  * This Domain level port for user model
- * This need to be implements on the Infrastructture level
+ * This need to be implements on the Infrastructure level
  */
 
 import User from './user';
