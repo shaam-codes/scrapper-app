@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package reading;
+
+import "google/protobuf/timestamp.proto";
+
+message Reading {
+    required string id = 1;
+    required double value = 2;
+    required string batch_id = 3;
+    required string detector_id = 4;
+    required bool is_active = 5;
+    required google.protobuf.Timestamp requested_at = 6;
+    required google.protobuf.Timestamp received_at = 7;
+    required google.protobuf.Timestamp created_at = 8;
+    required bool is_corrupted = 9;
+}
+
+message ReadingResponse {
+    Reading reading = 1;
+}
+

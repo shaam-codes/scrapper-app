@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package batch;
+
+import "google/protobuf/timestamp.proto";
+
+message Batch {
+    required string id = 1;
+    required string namme = 2;
+    required string section_id = 3;
+    required bool is_active = 4;
+    required google.protobuf.Timestamp created_at = 5;
+    required google.protobuf.Timestamp updated_at = 6;
+}
+
+message BatchResponse {
+    Batch batch = 1;
+}
+
