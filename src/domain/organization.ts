@@ -4,12 +4,14 @@
  * only way to create instance, use static methods with DTO args
  */
 
+import Uuid from './uuid';
+
 class Organization {
   public static fromCreateDto() {
 
   }
 
-  private readonly id: string;
+  private readonly id: Uuid;
   private readonly name: string;
   private readonly address: string;
   private readonly region: string;
@@ -18,7 +20,7 @@ class Organization {
   private readonly updatedAt: Date;
 
   private constructor(
-        id: string,
+        id: Uuid,
         name: string,
         address: string,
         region: string,
@@ -41,3 +43,5 @@ class Organization {
   }
 
 }
+
+export default Organization;

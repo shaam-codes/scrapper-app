@@ -1,5 +1,7 @@
+import Uuid from '../../../domain/uuid';
+
 class GetUserRequestDto {
-  private readonly id: string;
+  private readonly id: Uuid;
   private readonly firstName: string;
   private readonly lastName: string;
   private readonly email: string;
@@ -11,7 +13,7 @@ class GetUserRequestDto {
   private readonly updatedAt: Date;
 
   public constructor(
-          id: string,
+          id: Uuid,
           firstName: string,
           lastName: string,
           email: string,
@@ -34,7 +36,7 @@ class GetUserRequestDto {
     this.updatedAt = updatedAt;
   }
 
-  public getId(): string {
+  public getId(): Uuid {
     return this.id;
   }
 
@@ -75,3 +77,5 @@ class GetUserRequestDto {
   }
 
 }
+
+export default GetUserRequestDto;
