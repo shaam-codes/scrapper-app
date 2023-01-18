@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -rf _proto/
-yarn proto-loader-gen-types --longs=String --enums=String --defaults --keepCase --oneofs --grpcLib=@grpc/grpc-js --outDir=_proto/ proto/*.proto
+rm -rf ./src/grpc/_compiled_proto
+yarn proto-loader-gen-types --longs=String --enums=String --defaults --keepCase --oneofs --grpcLib=@grpc/grpc-js --outDir=./src/grpc/_compiled_proto/ ./src/grpc/proto/**/*.proto

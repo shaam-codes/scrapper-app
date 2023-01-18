@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package organization;
+
+import "google/protobuf/timestamp.proto";
+
+message Organization {
+    required string id = 1;
+    required string namme = 2;
+    required string address = 3;
+    required string region = 4;
+    required bool is_active = 5;
+    required google.protobuf.Timestamp created_at = 6;
+    required google.protobuf.Timestamp updated_at = 7;
+}
+
+message OrganizationResponse {
+    Organization organization = 1;
+}
+

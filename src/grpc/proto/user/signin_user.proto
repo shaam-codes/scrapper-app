@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package user;
+
+message SignInUserRequest {
+    required string email = 1;
+    required string password = 2;
+}
+
+message SignInUserResponse {
+    required string access_token = 1;
+    required string refresh_token = 2;
+}
+

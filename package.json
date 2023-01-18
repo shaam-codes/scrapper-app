@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "gen:proto": "sh ./proto-generator.sh",
     "run:lint": "eslint . --ext .ts",
     "run:fix": "eslint . --ext .ts --fix",
     "start:dev": "npx nodemon"
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.8.4",
-    "@grpc/proto-loader": "^0.7.4"
+    "@grpc/proto-loader": "^0.7.4",
+    "path": "^0.12.7"
   }
 }
