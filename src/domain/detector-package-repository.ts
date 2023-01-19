@@ -9,7 +9,7 @@
  */
 
 
-import DetectorPackage from './detectorPackage';
+import DetectorPackage from './detector-package';
 
 interface DetectorPackageRepository {
 
