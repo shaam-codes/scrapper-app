@@ -4,12 +4,25 @@
  * Use static functions for accepting the DTO and get domain instance
  */
 
+import CreateResponseDto from 'src/application/user/dto/create-response-dto';
+import CreateRequestDto from 'src/application/user/dto/create-request-dto';
+
 import Uuid from './uuid';
 
 
 class User {
-  public static fromCreateDto() {
-
+  public static fromCreateDto(createRequestDto: CreateRequestDto): User {
+    return new this(
+      createRequestDto.getId(),
+      createRequestDto.getFirstNamme(),
+      createRequestDto.getLastName(),
+      createRequestDto.getEmail(),
+      createRequestDto.getPassword(),
+      createRequestDto.getRoleId(),
+      createRequestDto.getIsActive(),
+      createRequestDto.getOrganizationId(),
+      createRequestDto.getCreatedAt(),
+    );
   }
 
   private readonly id: Uuid;
@@ -21,20 +34,20 @@ class User {
   private readonly isActive: boolean;
   private readonly organizationId: string;
   private readonly createdAt: Date;
-  private readonly updatedAt: Date;
+  private readonly updatedAt?: Date;
 
   private constructor(
-        id: Uuid,
-        firstName: string,
-        lastName: string,
-        email: string,
-        password: string,
-        roleId: number,
-        isActive: boolean,
-        organizationId: string,
-        createdAt: Date,
-        updatedAt: Date,
-    ) {
+    id: Uuid,
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    roleId: number,
+    isActive: boolean,
+    organizationId: string,
+    createdAt: Date,
+    updatedAt?: Date,
+  ) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -48,8 +61,18 @@ class User {
   }
 
 
-  public toCreateDto() {
-
+  public toCreateDto(): CreateResponseDto {
+    return new CreateResponseDto(
+      this.id,
+      this.firstName,
+      this.lastName,
+      this.email,
+      this.password,
+      this.roleId,
+      this.isActive,
+      this.organizationId,
+      this.createdAt,
+    );
   }
 
 }
