@@ -1,6 +1,6 @@
 import Uuid from '../../../domain/uuid';
 
-class GetUserRequestDto {
+class GetRequestDto {
   private readonly id: Uuid;
   private readonly firstName: string;
   private readonly lastName: string;
@@ -78,4 +78,4 @@ class GetUserRequestDto {
 
 }
 
-export default GetUserRequestDto;
+export default GetRequestDto;
