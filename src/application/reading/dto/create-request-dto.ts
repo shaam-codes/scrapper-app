@@ -36,31 +36,31 @@ class CreateRequestDto {
   public getId(): Uuid {
     return this.id;
   }
-    
-    public getValue(): number {
-        return this.value;
-    }
 
-    public getBatchId(): Uuid {
-        return this.batchId;
-    }
+  public getValue(): number {
+    return this.value;
+  }
 
-    public getDetectorId(): Uuid {
-        return this.detectorId;
-    }
+  public getBatchId(): Uuid {
+    return this.batchId;
+  }
 
-    public getRequestedAt(): Date {
-        return this.requestedAt;
-    }
+  public getDetectorId(): Uuid {
+    return this.detectorId;
+  }
 
-    public getReceivedAt(): Date {
-        return this.receivedAt;
-    }
+  public getRequestedAt(): Date {
+    return this.requestedAt;
+  }
 
-    public getIsCorrupted(): boolean {
-        return this.isCorrupted;
-    }
-    
+  public getReceivedAt(): Date {
+    return this.receivedAt;
+  }
+
+  public getIsCorrupted(): boolean {
+    return this.isCorrupted;
+  }
+
 }
 
 export default CreateRequestDto;
