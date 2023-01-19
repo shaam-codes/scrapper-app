@@ -8,9 +8,17 @@
  * Other User operations can be found in other interfaces,to maintain Interface segregation (SOLID)
  */
 
+import CreateRequestDto from './dto/create-request-dto';
+
+
 interface ModificationUseCase {
 
-    createUser(): void;
+    createUser(
+        firstName: string,
+        lastName: string,
+        email: string,
+        password: string,
+    ): CreateRequestDto;
 
 }
 

@@ -1,6 +1,6 @@
 import User from 'src/domain/user';
 
-import UserRepository from '../../domain/user-repository';
+import UserRepository from '../../../domain/user-repository';
 
 class PostgreSqlUserRepository implements UserRepository {
   createUser(user: User): void {
