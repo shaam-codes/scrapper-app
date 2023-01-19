@@ -8,7 +8,7 @@
  * Other User operations can be found in other interfaces,to maintain Interface segregation (SOLID)
  */
 
-import GetUserResponseDto from './dto/get-user-response-dto';
+import GetUserResponseDto from './dto/get-response-dto';
 
 interface RetrivalUseCase {
 

@@ -1,6 +1,6 @@
 import Uuid from '../../../domain/uuid';
 
-class GetUserResponseDto {
+class GetResponseDto {
   id: Uuid;
   firstName: string;
   lastName: string;
@@ -38,4 +38,4 @@ class GetUserResponseDto {
 
 }
 
-export default GetUserResponseDto;
+export default GetResponseDto;

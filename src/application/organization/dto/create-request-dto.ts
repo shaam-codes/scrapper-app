@@ -6,14 +6,13 @@
 
 import Uuid from '../../../domain/uuid';
 
-class CreateOrganizationRequestDto {
+class CreateRequestDto {
   private readonly id: Uuid;
   private readonly name: string;
   private readonly address: string;
   private readonly region: string;
   private readonly isActive: boolean;
   private readonly createdAt: Date;
-  private readonly updatedAt: Date;
 
 
   public constructor(
@@ -23,7 +22,6 @@ class CreateOrganizationRequestDto {
       region: string,
       isActive: boolean,
       createdAt: Date,
-      updatedAt: Date,
     ) {
     this.id = id;
     this.name = name;
@@ -31,7 +29,6 @@ class CreateOrganizationRequestDto {
     this.region = region;
     this.isActive = isActive;
     this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
   }
 
   public getId(): Uuid {
@@ -58,10 +55,6 @@ class CreateOrganizationRequestDto {
     return this.createdAt;
   }
 
-  public getUpdatedAt(): Date {
-    return this.updatedAt;
-  }
-
 }
 
-export default CreateOrganizationRequestDto;
+export default CreateRequestDto;
