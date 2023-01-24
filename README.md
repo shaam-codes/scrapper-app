@@ -1,4 +1,4 @@
-# scrapper-app
+# scrapper-app - [WIP]
 
 Core of the application, works as the back-end for the users. This is working under micro service architecture
 
