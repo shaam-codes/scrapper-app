@@ -34,11 +34,11 @@ function onClientReady() {
 function signUpUser() {
   client.SignUpUser(
     {
-      first_name: 'shaam',
+      firstName: 'shaam',
       email: 'shaam@shaam.com',
       password: 'helloThere',
       passwordConfirm: 'helloThere',
-      role_id: '22',
+      roleId: '22',
     },
     (err, res) => {
       if (err) {

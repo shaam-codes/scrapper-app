@@ -7,10 +7,10 @@ import "google/protobuf/timestamp.proto";
 message Batch {
     string id = 1;
     string namme = 2;
-    string section_id = 3;
-    bool is_active = 4;
-    google.protobuf.Timestamp created_at = 5;
-    google.protobuf.Timestamp updated_at = 6;
+    string sectionId = 3;
+    bool isActive = 4;
+    google.protobuf.Timestamp createdAt = 5;
+    google.protobuf.Timestamp updatedAt = 6;
 }
 
 message BatchResponse {

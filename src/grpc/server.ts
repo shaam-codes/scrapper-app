@@ -1,10 +1,11 @@
 import * as grpc from '@grpc/grpc-js';
+
+import {signupHandler} from '../infrastructure/controllers/user-controller';
+
 import {getPackageDefinition} from './utils/package';
 import {ProtoGrpcType} from './_compiled_proto/service';
 import {SignUpUserInput__Output} from './_compiled_proto/auth/SignUpUserInput';
 import {SignUpUserResponse} from './_compiled_proto/auth/SignUpUserResponse';
-
-import {signupHandler} from '../infrastructure/controllers/user-controller';
 
 
 const userPackageDef = getPackageDefinition('user/service.proto');

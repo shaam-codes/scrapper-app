@@ -8,7 +8,7 @@ message SignInUserRequest {
 }
 
 message SignInUserResponse {
-    string access_token = 1;
-    string refresh_token = 2;
+    string accessToken = 1;
+    string refreshToken = 2;
 }
 

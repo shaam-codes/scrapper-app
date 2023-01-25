@@ -9,9 +9,9 @@ message Organization {
     string namme = 2;
     string address = 3;
     string region = 4;
-    bool is_active = 5;
-    google.protobuf.Timestamp created_at = 6;
-    google.protobuf.Timestamp updated_at = 7;
+    bool isActive = 5;
+    google.protobuf.Timestamp createdAt = 6;
+    google.protobuf.Timestamp updatedAt = 7;
 }
 
 message OrganizationResponse {

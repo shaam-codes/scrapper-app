@@ -1,4 +1,4 @@
-// Original file: src/grpc/proto/user/signup_user.proto
+// Original file: src/grpc/proto/user/signup-user.proto
 
 import type { User as _user_User, User__Output as _user_User__Output } from '../user/User';
 

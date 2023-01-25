@@ -1,4 +1,4 @@
-// Original file: src/grpc/proto/user/signin_user.proto
+// Original file: src/grpc/proto/user/signin-user.proto
 
 
 export interface SignInUserRequest {
