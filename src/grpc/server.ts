@@ -1,19 +1,11 @@
-import path from 'path';
-
 import * as grpc from '@grpc/grpc-js';
-import * as protoLoader from '@grpc/proto-loader';
-
+import {getPackageDefinition} from './utils/package';
 import {ProtoGrpcType} from './_compiled_proto/service';
-import {options} from './options';
+import {SignUpUserInput__Output} from './_compiled_proto/auth/SignUpUserInput';
+import {SignUpUserResponse} from './_compiled_proto/auth/SignUpUserResponse';
 
-// following codes need to move to a util class
+import {signupHandler} from '../infrastructure/controllers/user-controller';
 
-const getPackageDefinition = (protoFileName: string, protoRootPath = 'proto') => {
-  return protoLoader.loadSync(
-    path.resolve(__dirname, protoRootPath, protoFileName),
-    options,
-  );
-};
 
 const userPackageDef = getPackageDefinition('user/service.proto');
 
@@ -26,7 +18,10 @@ const userPackage = userProto.user;
 const server = new grpc.Server();
 
 server.addService(userPackage.UserService.service, {
-  SignInUser: () => {},
+  SignUpUser: (
+    req: grpc.ServerUnaryCall<SignUpUserInput__Output, SignUpUserResponse>,
+    res: grpc.sendUnaryData<SignUpUserResponse>,
+  ) => signupHandler(req, res),
 });
 
 export default server;

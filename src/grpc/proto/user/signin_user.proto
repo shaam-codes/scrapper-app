@@ -3,12 +3,12 @@ syntax = "proto3";
 package user;
 
 message SignInUserRequest {
-    required string email = 1;
-    required string password = 2;
+    string email = 1;
+    string password = 2;
 }
 
 message SignInUserResponse {
-    required string access_token = 1;
-    required string refresh_token = 2;
+    string access_token = 1;
+    string refresh_token = 2;
 }
 

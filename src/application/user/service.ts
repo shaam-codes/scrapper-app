@@ -4,8 +4,8 @@
  * Get real values and convert into DTOs and execute using domain
  */
 
-import User from 'src/domain/user';
-import UserRepository from 'src/domain/user-repository';
+import User from '../../domain/user';
+import UserRepository from '../../domain/user-repository';
 
 import ModificationUseCase from './modificaiton-use-case';
 

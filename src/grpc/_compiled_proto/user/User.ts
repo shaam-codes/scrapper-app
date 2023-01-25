@@ -8,11 +8,10 @@ export interface User {
   'last_name'?: (string);
   'email'?: (string);
   'role_id'?: (string);
-  'organization_id'?: (number);
+  'organization_id'?: (string);
   'is_active'?: (boolean);
   'created_at'?: (_google_protobuf_Timestamp | null);
   'updated_at'?: (_google_protobuf_Timestamp | null);
-  '_organization_id'?: "organization_id";
 }
 
 export interface User__Output {
@@ -21,9 +20,8 @@ export interface User__Output {
   'last_name': (string);
   'email': (string);
   'role_id': (string);
-  'organization_id'?: (number);
+  'organization_id': (string);
   'is_active': (boolean);
   'created_at': (_google_protobuf_Timestamp__Output | null);
   'updated_at': (_google_protobuf_Timestamp__Output | null);
-  '_organization_id': "organization_id";
 }

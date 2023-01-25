@@ -5,8 +5,8 @@
  * This will use inside the console/command
  */
 
-import CreateRequestDto from 'src/application/user/dto/create-request-dto';
-import ModificationUseCase from 'src/application/user/modificaiton-use-case';
+import CreateRequestDto from '@application/user/dto/create-request-dto';
+import ModificationUseCase from '@application/user/modificaiton-use-case';
 
 class ModificationUseCaseConsole implements ModificationUseCase {
   createUser(firstName: string, lastName: string, email: string, password: string): CreateRequestDto {

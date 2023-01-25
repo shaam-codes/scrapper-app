@@ -8,7 +8,7 @@
  * Other User operations can be found in other interfaces,to maintain Interface segregation (SOLID)
  */
 
-import CreateRequestDto from './dto/create-request-dto';
+import CreateRequestDto from '@application/user/dto/create-request-dto';
 
 
 interface ModificationUseCase {

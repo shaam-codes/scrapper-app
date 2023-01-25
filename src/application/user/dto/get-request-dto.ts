@@ -1,4 +1,4 @@
-import Uuid from '../../../domain/uuid';
+import Uuid from '@domain/uuid';
 
 class GetRequestDto {
   private readonly id: Uuid;

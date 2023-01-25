@@ -4,7 +4,7 @@
  * This class specifically using on organization creation
  */
 
-import Uuid from '../../../domain/uuid';
+import Uuid from '@domain/uuid';
 
 class CreateRequestDto {
   private readonly id: Uuid;
