@@ -5,13 +5,13 @@ package detector;
 import "google/protobuf/timestamp.proto";
 
 message Detector {
-    required string id = 1;
-    required string namme = 2;
-    required string alias = 3;
-    required string detector_package_id = 4;
-    required bool is_active = 5;
-    required google.protobuf.Timestamp created_at = 6;
-    required google.protobuf.Timestamp updated_at = 7;
+    string id = 1;
+    string namme = 2;
+    string alias = 3;
+    string detector_package_id = 4;
+    bool is_active = 5;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
 }
 
 message DetectorResponse {

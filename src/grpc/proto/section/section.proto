@@ -5,13 +5,13 @@ package section;
 import "google/protobuf/timestamp.proto";
 
 message Section {
-    required string id = 1;
-    required string namme = 2;
-    required string description = 3;
-    required string organization_id = 4;
-    required bool is_active = 5;
-    required google.protobuf.Timestamp created_at = 6;
-    required google.protobuf.Timestamp updated_at = 7;
+    string id = 1;
+    string namme = 2;
+    string description = 3;
+    string organization_id = 4;
+    bool is_active = 5;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
 }
 
 message SectionResponse {

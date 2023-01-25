@@ -1,6 +1,5 @@
-import User from 'src/domain/user';
-
-import UserRepository from '../../../domain/user-repository';
+import User from '@domain/user';
+import UserRepository from '@domain/user-repository';
 
 class SqliteUserRepository implements UserRepository {
   createUser(user: User): void {

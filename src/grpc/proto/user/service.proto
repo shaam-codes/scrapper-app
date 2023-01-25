@@ -4,8 +4,10 @@ package user;
 
 import "user.proto";
 import "signin_user.proto";
+import "signup_user.proto";
 
 service UserService {
     rpc SignInUser (SignInUserRequest) returns (SignInUserResponse) {};
+    rpc SignUpUser(SignUpUserInput) returns (SignUpUserResponse) {}
 }
 
