@@ -7,9 +7,9 @@ export interface Organization {
   'namme'?: (string);
   'address'?: (string);
   'region'?: (string);
-  'is_active'?: (boolean);
-  'created_at'?: (_google_protobuf_Timestamp | null);
-  'updated_at'?: (_google_protobuf_Timestamp | null);
+  'isActive'?: (boolean);
+  'createdAt'?: (_google_protobuf_Timestamp | null);
+  'updatedAt'?: (_google_protobuf_Timestamp | null);
 }
 
 export interface Organization__Output {
@@ -17,7 +17,7 @@ export interface Organization__Output {
   'namme': (string);
   'address': (string);
   'region': (string);
-  'is_active': (boolean);
-  'created_at': (_google_protobuf_Timestamp__Output | null);
-  'updated_at': (_google_protobuf_Timestamp__Output | null);
+  'isActive': (boolean);
+  'createdAt': (_google_protobuf_Timestamp__Output | null);
+  'updatedAt': (_google_protobuf_Timestamp__Output | null);
 }

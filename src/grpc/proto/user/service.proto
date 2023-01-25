@@ -3,8 +3,8 @@ syntax = "proto3";
 package user;
 
 import "user.proto";
-import "signin_user.proto";
-import "signup_user.proto";
+import "signin-user.proto";
+import "signup-user.proto";
 
 service UserService {
     rpc SignInUser (SignInUserRequest) returns (SignInUserResponse) {};

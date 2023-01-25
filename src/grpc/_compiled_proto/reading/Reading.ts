@@ -5,23 +5,23 @@ import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _goo
 export interface Reading {
   'id'?: (string);
   'value'?: (number | string);
-  'batch_id'?: (string);
-  'detector_id'?: (string);
-  'is_active'?: (boolean);
-  'requested_at'?: (_google_protobuf_Timestamp | null);
-  'received_at'?: (_google_protobuf_Timestamp | null);
-  'created_at'?: (_google_protobuf_Timestamp | null);
-  'is_corrupted'?: (boolean);
+  'batchId'?: (string);
+  'detectorId'?: (string);
+  'isActive'?: (boolean);
+  'requestedAt'?: (_google_protobuf_Timestamp | null);
+  'receivedAt'?: (_google_protobuf_Timestamp | null);
+  'createdAt'?: (_google_protobuf_Timestamp | null);
+  'isCorrupted'?: (boolean);
 }
 
 export interface Reading__Output {
   'id': (string);
   'value': (number);
-  'batch_id': (string);
-  'detector_id': (string);
-  'is_active': (boolean);
-  'requested_at': (_google_protobuf_Timestamp__Output | null);
-  'received_at': (_google_protobuf_Timestamp__Output | null);
-  'created_at': (_google_protobuf_Timestamp__Output | null);
-  'is_corrupted': (boolean);
+  'batchId': (string);
+  'detectorId': (string);
+  'isActive': (boolean);
+  'requestedAt': (_google_protobuf_Timestamp__Output | null);
+  'receivedAt': (_google_protobuf_Timestamp__Output | null);
+  'createdAt': (_google_protobuf_Timestamp__Output | null);
+  'isCorrupted': (boolean);
 }

@@ -4,8 +4,9 @@
  * Use static functions for accepting the DTO and get domain instance
  */
 
-import CreateResponseDto from './../application/user/dto/create-response-dto';
 import CreateRequestDto from '@application/user/dto/create-request-dto';
+
+import CreateResponseDto from '../application/user/dto/create-response-dto';
 
 import Uuid from './uuid';
 
