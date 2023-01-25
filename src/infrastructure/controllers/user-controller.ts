@@ -7,7 +7,7 @@ import Service from '../../application/user/service';
 import ModificationUseCaseApi from '../primary-adapters/user/modification-use-case.api';
 import PostgreSqlUserRepository from '../secondary-adapters/postgres/postgre-sql-user-respository';
 
-const signupHandler = async (
+const signupHandler = (
   req: grpc.ServerUnaryCall<SignUpUserInput__Output, SignUpUserResponse>,
   res: grpc.sendUnaryData<SignUpUserResponse>,
 ) => {
