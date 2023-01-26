@@ -1,0 +1,112 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id             String       @id @db.VarChar(36)
+  firstName      String       @db.VarChar(256)
+  lastName       String       @db.VarChar(256)
+  email          String
+  password       String
+  roleId         Int          @db.SmallInt
+  organizationId String?       @db.VarChar(36)
+  isActive       Boolean
+  createdAt      DateTime
+  updatedAt      DateTime
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+
+  @@map(name: "users")
+}
+
+model Organization {
+  id        String    @id @db.VarChar(36)
+  name      String    @db.VarChar(256)
+  address   String?
+  region    String?
+  isActive  Boolean
+  createdAt DateTime
+  updatedAt DateTime
+  User      User[]
+  Section   Section[]
+
+  @@map(name: "organizations")
+}
+
+model Section {
+  id              String            @id @db.VarChar(36)
+  name            String            @db.VarChar(256)
+  description     String?
+  organizationId  String            @db.VarChar(36)
+  isActive        Boolean
+  createdAt       DateTime
+  updatedAt       DateTime
+  Organization    Organization      @relation(fields: [organizationId], references: [id])
+  Batch           Batch[]
+  DetectorPackage DetectorPackage[]
+
+  @@map(name: "sections")
+}
+
+model Batch {
+  id        String    @id @db.VarChar(36)
+  name      String    @db.VarChar(256)
+  sectionId String    @db.VarChar(36)
+  isActive  Boolean
+  createdAt DateTime
+  updatedAt DateTime
+  Section   Section   @relation(fields: [sectionId], references: [id])
+  Reading   Reading[]
+
+  @@map(name: "batches")
+}
+
+model Detector {
+  id                String          @id @db.VarChar(36)
+  name              String          @db.VarChar(256)
+  alias             String?         @db.VarChar(256)
+  detectorPackageId String          @db.VarChar(36)
+  isActive          Boolean
+  createdAt         DateTime
+  updatedAt         DateTime
+  Detector          DetectorPackage @relation(fields: [detectorPackageId], references: [id])
+  Reading           Reading[]
+
+  @@map(name: "detectors")
+}
+
+model DetectorPackage {
+  id        String     @id @db.VarChar(36)
+  name      String     @db.VarChar(256)
+  url       String     @db.VarChar(256)
+  sectionId String     @db.VarChar(36)
+  isActive  Boolean
+  createdAt DateTime
+  updatedAt DateTime
+  Section   Section    @relation(fields: [sectionId], references: [id])
+  Detector  Detector[]
+
+  @@map(name: "detector_packages")
+}
+
+model Reading {
+  id          String   @id @db.VarChar(36)
+  value       Float    @default(0) @db.DoublePrecision
+  batchId     String   @db.VarChar(36)
+  detectorId  String   @db.VarChar(36)
+  requestedAt DateTime
+  receivedt   DateTime
+  isCorrupted Boolean
+  Batch       Batch    @relation(fields: [batchId], references: [id])
+  Detector    Detector @relation(fields: [detectorId], references: [id])
+
+  @@map(name: "readings")
+}
