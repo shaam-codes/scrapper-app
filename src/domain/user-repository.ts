@@ -8,11 +8,12 @@
  * Other User operations can be found in other interfaces,to maintain Interface segregation (SOLID)
  */
 
+import CreateResponseDto from '@application/user/dto/create-response-dto';
 import User from './user';
 
 interface UserRepository {
 
-    createUser(user: User): void;
+    createUser(user: User): Promise<CreateResponseDto>;
 
 }
 

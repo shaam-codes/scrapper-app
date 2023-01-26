@@ -11,17 +11,25 @@ import Uuid from '../../../domain/uuid';
 
 class ModificationUseCaseApi implements ModificationUseCase {
 
-  createUser(firstName: string, lastName: string, email: string, password: string): CreateRequestDto {
+  createUser(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    roleId: number,
+    organizationId: string,
+  ): CreateRequestDto {
+    
     return new CreateRequestDto(
       Uuid.generate(),
       firstName,
       lastName,
       email,
       password,
-      3,
+      roleId,
       true,
-      'dsfsd',
-      new Date,
+      organizationId,
+      new Date(),
     );
   }
 

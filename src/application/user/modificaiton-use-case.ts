@@ -18,6 +18,8 @@ interface ModificationUseCase {
         lastName: string,
         email: string,
         password: string,
+        roleId: number,
+        organizationId: string,
     ): CreateRequestDto;
 
 }

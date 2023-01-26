@@ -35,10 +35,12 @@ function signUpUser() {
   client.SignUpUser(
     {
       firstName: 'shaam',
+      lastName: 'ampi',
       email: 'shaam@shaam.com',
       password: 'helloThere',
       passwordConfirm: 'helloThere',
       roleId: '22',
+      organizationId: '324324-4324-234-234324'
     },
     (err, res) => {
       if (err) {
