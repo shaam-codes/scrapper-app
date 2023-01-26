@@ -12,12 +12,12 @@ const signupHandler = (
   res: grpc.sendUnaryData<SignUpUserResponse>,
 ) => {
   try {
-    // const modificaitonUseCase = new ModificationUseCaseApi();
-    // const postgresqlUserRepository = new PostgreSqlUserRepository();
+    const modificaitonUseCase = new ModificationUseCaseApi();
+    const postgresqlUserRepository = new PostgreSqlUserRepository();
 
-    // const service = new Service(modificaitonUseCase, postgresqlUserRepository);
+    const service = new Service(modificaitonUseCase, postgresqlUserRepository);
 
-    // service.create('FirstName', 'LastName', 'test@example.com', 'jhjhfvlwevfywefjw');
+    service.create('FirstName', 'LastName', 'test@example.com', 'jhjhfvlwevfywefjw');
 
 
     res(null, {
