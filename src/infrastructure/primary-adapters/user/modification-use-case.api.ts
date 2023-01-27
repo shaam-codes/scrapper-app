@@ -5,11 +5,15 @@
  * This will use inside the api/controller
  */
 
+import GetRequestDto from '@application/user/dto/get-request-dto';
 import CreateRequestDto from '../../../application/user/dto/create-request-dto';
 import ModificationUseCase from '../../../application/user/modificaiton-use-case';
 import Uuid from '../../../domain/uuid';
 
 class ModificationUseCaseApi implements ModificationUseCase {
+  getUserId(userId: string): Uuid {
+    return Uuid.validate(userId);
+  }
 
   createUser(
     firstName: string,

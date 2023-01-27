@@ -5,7 +5,7 @@ package auth;
 import "user.proto";
 import "./../common/success.proto";
 
-message SignUpUserInput {
+message SignUpUserRequest {
   string firstName = 1;
   string lastName = 2;
   string email = 3;

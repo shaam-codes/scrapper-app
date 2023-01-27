@@ -9,6 +9,7 @@
  */
 
 import CreateRequestDto from '@application/user/dto/create-request-dto';
+import Uuid from '@domain/uuid';
 
 
 interface ModificationUseCase {
@@ -21,6 +22,8 @@ interface ModificationUseCase {
         roleId: number,
         organizationId: string,
     ): CreateRequestDto;
+
+    getUserId(userId: string): Uuid;
 
 }
 

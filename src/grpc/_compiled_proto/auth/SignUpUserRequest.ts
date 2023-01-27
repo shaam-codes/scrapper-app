@@ -1,7 +1,7 @@
 // Original file: src/grpc/proto/user/signup-user.proto
 
 
-export interface SignUpUserInput {
+export interface SignUpUserRequest {
   'firstName'?: (string);
   'lastName'?: (string);
   'email'?: (string);
@@ -11,7 +11,7 @@ export interface SignUpUserInput {
   'organizationId'?: (string);
 }
 
-export interface SignUpUserInput__Output {
+export interface SignUpUserRequest__Output {
   'firstName': (string);
   'lastName': (string);
   'email': (string);

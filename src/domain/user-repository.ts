@@ -10,10 +10,13 @@
 
 import CreateResponseDto from '@application/user/dto/create-response-dto';
 import User from './user';
+import Uuid from './uuid';
 
 interface UserRepository {
 
     createUser(user: User): Promise<CreateResponseDto>;
+
+    getUser(id: Uuid): Promise<User>;
 
 }
 

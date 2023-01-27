@@ -1,4 +1,4 @@
-// Original file: src/grpc/proto/user/getUser.proto
+// Original file: src/grpc/proto/user/get-user.proto
 
 
 export interface GetUserRequest {

@@ -5,6 +5,8 @@
  */
 
 import CreateRequestDto from '@application/user/dto/create-request-dto';
+import GetRequestDto from '../application/user/dto/get-request-dto';
+import GetResponseDto from '../application/user/dto/get-response-dto';
 
 import CreateResponseDto from '../application/user/dto/create-response-dto';
 
@@ -23,6 +25,22 @@ class User {
       createRequestDto.getIsActive(),
       createRequestDto.getOrganizationId(),
       createRequestDto.getCreatedAt(),
+      null,
+    );
+  }
+
+  public static fromGetDto(getRequestDto: GetRequestDto): User {
+    return new this(
+      getRequestDto.getId(),
+      getRequestDto.getFirstNamme(),
+      getRequestDto.getLastName(),
+      getRequestDto.getEmail(),
+      getRequestDto.getPassword(),
+      getRequestDto.getRoleId(),
+      getRequestDto.getIsActive(),
+      getRequestDto.getOrganizationId(),
+      getRequestDto.getCreatedAt(),
+      getRequestDto.getUpdatedAt(),
     );
   }
 
@@ -33,9 +51,9 @@ class User {
   private readonly password: string;
   private readonly roleId: number;
   private readonly isActive: boolean;
-  private readonly organizationId: string;
+  private readonly organizationId: string | null;
   private readonly createdAt: Date;
-  private readonly updatedAt?: Date;
+  private readonly updatedAt: Date | null;
 
   private constructor(
     id: Uuid,
@@ -45,9 +63,9 @@ class User {
     password: string,
     roleId: number,
     isActive: boolean,
-    organizationId: string,
+    organizationId: string | null,
     createdAt: Date,
-    updatedAt?: Date,
+    updatedAt: Date | null,
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -73,6 +91,21 @@ class User {
       this.isActive,
       this.organizationId,
       this.createdAt,
+    );
+  }
+
+  public toGetDto(): GetResponseDto {
+    return new GetResponseDto(
+      this.id,
+      this.firstName,
+      this.lastName,
+      this.email,
+      this.password,
+      this.roleId,
+      this.isActive,
+      this.organizationId,
+      this.createdAt,
+      this.updatedAt,
     );
   }
 

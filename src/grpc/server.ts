@@ -1,11 +1,13 @@
 import * as grpc from '@grpc/grpc-js';
 
-import {signupHandler} from '../infrastructure/controllers/user-controller';
+import {signupHandler, getUserHandler} from '../infrastructure/controllers/user-controller';
 
 import {getPackageDefinition} from './utils/package';
 import {ProtoGrpcType} from './_compiled_proto/service';
-import {SignUpUserInput__Output} from './_compiled_proto/auth/SignUpUserInput';
-import {SignUpUserResponse} from './_compiled_proto/auth/SignUpUserResponse';
+import {SignUpUserRequest__Output} from './_compiled_proto/auth/SignUpUserRequest';
+import { SignUpUserResponse } from './_compiled_proto/auth/SignUpUserResponse';
+import { GetUserResponse } from './_compiled_proto/auth/GetUserResponse';
+import {GetUserRequest__Output} from './_compiled_proto/auth/GetUserRequest';
 
 const userPackageDef = getPackageDefinition('user/service.proto');
 
@@ -19,9 +21,13 @@ const server = new grpc.Server();
 
 server.addService(userPackage.UserService.service, {
   SignUpUser: (
-    req: grpc.ServerUnaryCall<SignUpUserInput__Output, SignUpUserResponse>,
+    req: grpc.ServerUnaryCall<SignUpUserRequest__Output, SignUpUserResponse>,
     res: grpc.sendUnaryData<SignUpUserResponse>,
   ) => signupHandler(req, res),
+  GetUser: (
+    req: grpc.ServerUnaryCall<GetUserRequest__Output, GetUserResponse>,
+    res: grpc.sendUnaryData<GetUserResponse>,
+  ) => getUserHandler(req, res),
 });
 
 export default server;
