@@ -6,9 +6,9 @@ import {prisma} from '../../../db/prisma-client';
 import CreateResponseDto from '@application/user/dto/create-response-dto';
 
 const createUserPrisma = async (input: Prisma.UserCreateInput) => {
-  // return (await prisma.user.create({
-  //   data: input,
-  // })) as PrismaUser;
+  return (await prisma.user.create({
+    data: input,
+  })) as PrismaUser;
 };
 
 class PostgreSqlUserRepository implements UserRepository {
