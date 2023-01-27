@@ -9,7 +9,7 @@ message User {
     string firstName = 2;
     string lastName = 3;
     string email = 4;
-    string roleId = 5;
+    int32 roleId = 5;
     string organizationId = 6; // TODO: this will be convert to organization
     bool isActive = 7;
     google.protobuf.Timestamp createdAt = 8;

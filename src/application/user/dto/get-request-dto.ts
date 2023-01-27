@@ -8,22 +8,22 @@ class GetRequestDto {
   private readonly password: string;
   private readonly roleId: number;
   private readonly isActive: boolean;
-  private readonly organizationId: string;
+  private readonly organizationId: string | null;
   private readonly createdAt: Date;
-  private readonly updatedAt: Date;
+  private readonly updatedAt: Date | null;
 
   public constructor(
-          id: Uuid,
-          firstName: string,
-          lastName: string,
-          email: string,
-          password: string,
-          roleId: number,
-          isActive: boolean,
-          organizationId: string,
-          createdAt: Date,
-          updatedAt: Date,
-      ) {
+      id: Uuid,
+      firstName: string,
+      lastName: string,
+      email: string,
+      password: string,
+      roleId: number,
+      isActive: boolean,
+      organizationId: string | null,
+      createdAt: Date,
+      updatedAt: Date | null,
+  ) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -64,7 +64,7 @@ class GetRequestDto {
     return this.isActive;
   }
 
-  public getOrganizationId(): string {
+  public getOrganizationId(): string | null {
     return this.organizationId;
   }
 
@@ -72,7 +72,7 @@ class GetRequestDto {
     return this.createdAt;
   }
 
-  public getUpdatedAt(): Date {
+  public getUpdatedAt(): Date | null {
     return this.updatedAt;
   }
 

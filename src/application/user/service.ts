@@ -7,6 +7,7 @@
 import User from '../../domain/user';
 import UserRepository from '../../domain/user-repository';
 import CreateResponseDto from './dto/create-response-dto';
+import GetResponseDto from './dto/get-response-dto';
 
 import ModificationUseCase from './modificaiton-use-case';
 
@@ -42,6 +43,16 @@ class Service {
     const user = User.fromCreateDto(createRequestDto);
 
     return this.userRepository.createUser(user);
+  }
+
+  public async get(
+    userId: string
+  ): Promise<GetResponseDto> {
+    const id = this.modificaitonUseCase.getUserId(userId);
+    
+    const user = await this.userRepository.getUser(id);
+
+    return user.toGetDto();
   }
 }
 

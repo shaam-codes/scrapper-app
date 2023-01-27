@@ -12,20 +12,20 @@ class CreateResponseDto {
   password: string;
   roleId: number;
   isActive: boolean;
-  organizationId: string;
+  organizationId: string | null;
   createdAt: Date;
 
   public constructor(
-        id: Uuid,
-        firstName: string,
-        lastName: string,
-        email: string,
-        password: string,
-        roleId: number,
-        isActive: boolean,
-        organizationId: string,
-        createdAt: Date,
-    ) {
+    id: Uuid,
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    roleId: number,
+    isActive: boolean,
+    organizationId: string | null,
+    createdAt: Date,
+) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

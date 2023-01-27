@@ -28,7 +28,8 @@ client.waitForReady(deadline, (err) => {
 });
 
 function onClientReady() {
-  signUpUser();
+  // signUpUser();
+  getUser();
 }
 
 function signUpUser() {
@@ -41,6 +42,21 @@ function signUpUser() {
       passwordConfirm: 'helloThere',
       roleId: '22',
       organizationId: '324324-4324-234-234324'
+    },
+    (err, res) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(res);
+    },
+  );
+}
+
+function getUser() {
+  client.getUser(
+    {
+      userId: '014cf46f-ace2-480e-964e-896ddde1165b'
     },
     (err, res) => {
       if (err) {

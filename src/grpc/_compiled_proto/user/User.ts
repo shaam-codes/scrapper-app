@@ -7,7 +7,7 @@ export interface User {
   'firstName'?: (string);
   'lastName'?: (string);
   'email'?: (string);
-  'roleId'?: (string);
+  'roleId'?: (number);
   'organizationId'?: (string);
   'isActive'?: (boolean);
   'createdAt'?: (_google_protobuf_Timestamp | null);
@@ -19,7 +19,7 @@ export interface User__Output {
   'firstName': (string);
   'lastName': (string);
   'email': (string);
-  'roleId': (string);
+  'roleId': (number);
   'organizationId': (string);
   'isActive': (boolean);
   'createdAt': (_google_protobuf_Timestamp__Output | null);
