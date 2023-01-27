@@ -2,9 +2,9 @@
 
 
 export interface GetUserRequest {
-  'id'?: (string);
+  'userId'?: (string);
 }
 
 export interface GetUserRequest__Output {
-  'id': (string);
+  'userId': (string);
 }

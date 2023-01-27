@@ -4,8 +4,11 @@ package auth;
 
 import "user.proto";
 
+// userId will be added by proxy
+// same property will be add into all authenticated requests
+// For the consistancy, use userId for identity of loggedin user for all authenticated access
 message GetUserRequest {
-  string id = 1;
+  string userId = 1;
 }
 
 message GetUserResponse { User user = 1; }
