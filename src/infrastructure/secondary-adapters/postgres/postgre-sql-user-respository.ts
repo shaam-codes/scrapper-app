@@ -1,8 +1,9 @@
-import { Prisma, User as PrismaUser } from '@prisma/client';
-
+import {Prisma, User as PrismaUser} from '@prisma/client';
 import User from '@domain/user';
 import UserRepository from '@domain/user-repository';
-import { prisma } from '../../../db/prisma-client';
+
+import {prisma} from '../../../db/prisma-client';
+import CreateResponseDto from '@application/user/dto/create-response-dto';
 
 const createUserPrisma = async (input: Prisma.UserCreateInput) => {
   return (await prisma.user.create({
@@ -11,24 +12,25 @@ const createUserPrisma = async (input: Prisma.UserCreateInput) => {
 };
 
 class PostgreSqlUserRepository implements UserRepository {
-  async createUser(user: User): Promise<void> {
+  async createUser(user: User): Promise<CreateResponseDto> {
+
+    const createDto = user.toCreateDto();
+
     const __user = await createUserPrisma(
       {
-        id: 'sdsad3fgda',
-        firstName: 'sdfbgldsjhkfbjk',
-        lastName: 'asdsadasd',
-        email: 'khsdbgkhjdsbflakjs',
-        password: 'hsjdbfjkhsdbfljksd',
-        roleId: 3,
+        id: createDto.id.value(),
+        firstName: createDto.firstName,
+        lastName: createDto.lastName,
+        email: createDto.email,
+        password: createDto.password,
+        roleId: createDto.roleId,
         isActive: true,
         createdAt: new Date(),
         updatedAt: new Date(),
-      }
+      },
     );
 
-    console.log(typeof __user);
-
-    return;
+    return createDto;
   }
 
 }

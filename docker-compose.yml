@@ -1,10 +1,11 @@
 # This is for testing purpose, will be removevd and implement with helm chart for deployments
 
 version: '3'
+
 services:
   postgres:
     image: postgres
-    container_name: postgres
+    container_name: scrapper_db
     ports:
       - '6500:5432'
     restart: always

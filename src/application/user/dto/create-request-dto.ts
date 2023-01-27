@@ -27,7 +27,7 @@ class CreateRequestDto {
         isActive: boolean,
         organizationId: string,
         createdAt: Date,
-    ) {
+  ) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

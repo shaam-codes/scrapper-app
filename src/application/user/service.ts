@@ -6,6 +6,7 @@
 
 import User from '../../domain/user';
 import UserRepository from '../../domain/user-repository';
+import CreateResponseDto from './dto/create-response-dto';
 
 import ModificationUseCase from './modificaiton-use-case';
 
@@ -26,16 +27,21 @@ class Service {
     lastName: string,
     email: string,
     password: string,
+    organizationId: string,
     roleId = 3,
-  ) {
-    const createRequestDto = this.modificaitonUseCase.createUser(firstName,
+  ): Promise<CreateResponseDto> {
+    const createRequestDto = this.modificaitonUseCase.createUser(
+      firstName,
       lastName,
       email,
-      password);
+      password,
+      roleId,
+      organizationId
+    );
 
     const user = User.fromCreateDto(createRequestDto);
 
-    this.userRepository.createUser(user);
+    return this.userRepository.createUser(user);
   }
 }
 
