@@ -8,11 +8,8 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   auth: {
-    SignUpUserInput: MessageTypeDefinition
-    SignUpUserResponse: MessageTypeDefinition
-  }
-  common: {
-    successResponse: MessageTypeDefinition
+    GetUserRequest: MessageTypeDefinition
+    GetUserResponse: MessageTypeDefinition
   }
   google: {
     protobuf: {

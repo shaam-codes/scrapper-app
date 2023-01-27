@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth;
+
+import "user.proto";
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse { User user = 1; }

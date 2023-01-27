@@ -12,8 +12,6 @@ const signupHandler = async (
   res: grpc.sendUnaryData<SignUpUserResponse>,
 ) => {
   try {
-
-    console.log(req.request);
     const modificaitonUseCase = new ModificationUseCaseApi();
     const postgresqlUserRepository = new PostgreSqlUserRepository();
 
@@ -40,21 +38,7 @@ const signupHandler = async (
     );
 
 
-    res(null, {
-      user: {
-        id: createdUserDto.id.value(),
-        firstName: createdUserDto.firstName,
-        lastName: createdUserDto.lastName,
-        email: createdUserDto.email,
-        isActive: createdUserDto.isActive,
-        createdAt: {
-          seconds: createdUserDto.createdAt.getTime() / 1000,
-        },
-        updatedAt: {
-          seconds: createdUserDto.createdAt.getTime() / 1000,
-        },
-      },
-    });
+    res(null, {id: createdUserDto.id.value()});
   } catch (err: any) {
     res({
       code: grpc.status.INTERNAL,

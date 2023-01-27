@@ -12,6 +12,9 @@ export interface ProtoGrpcType {
     SignUpUserInput: MessageTypeDefinition
     SignUpUserResponse: MessageTypeDefinition
   }
+  common: {
+    successResponse: MessageTypeDefinition
+  }
   google: {
     protobuf: {
       Timestamp: MessageTypeDefinition
